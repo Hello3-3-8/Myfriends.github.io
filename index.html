@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机数字抽取器 (1-17)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px 60px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .number-display {
+            font-size: 100px;
+            font-weight: bold;
+            color: #1890ff;
+            height: 120px;
+            line-height: 120px;
+            margin-bottom: 30px;
+            transition: all 0.2s;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #1890ff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #40a9ff;
+        }
+        button:active {
+            background-color: #096dd9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>随机抽取 1~17</h1>
+        <div class="number-display" id="result">?</div>
+        <button onclick="drawNumber()">开始抽取</button>
+    </div>
+
+    <script>
+        function drawNumber() {
+            const resultElement = document.getElementById('result');
+            // Math.random() 生成 0~1 之间的数，乘以 17 再加 1 并向下取整，即可得到 1~17 的整数
+            const randomNumber = Math.floor(Math.random() * 17) + 1;
+            resultElement.textContent = randomNumber;
+        }
+    </script>
+</body>
+</html>
+
